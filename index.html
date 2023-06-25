@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="styles.css" rel="stylesheet" type="text/css" />
+    <title>Even or Odd Number</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Find Number</h1> 
+            <form>
+            <label for="number">Enter any number" and get it is even or odd:</label>
+            <br>
+            <input type="number" id="userInput" />
+            <br> 
+            <br> 
+            <button id="btn1">Click Here</button>
+            <button id="btn2">Reset</button>
+        </form>
+            <p id="result"></p>
+        </div>
+    </div>
+    <script type="module">
+        const input = document.getElementById("userInput");
+        const checkbutton = document.getElementById("btn1");
+        const clearbutton = document.getElementById("btn2");
+        const resultElement = document.getElementById("result");
+
+        checkbutton.addEventListener("click", (event) => {
+            const number = parseInt(input.value);
+            event.preventDefault();
+
+            if (isNaN(number)) {
+                resultElement.textContent = "Please Enter valid number.";
+            } else if (number % 2 === 0) {
+                resultElement.textContent = `${number} is an even number.`;
+            } else {
+                resultElement.textContent = `${number} is an odd number.`;
+            }
+        })
+                clearButton.addEventListener("click", () => {
+            inputNumber.value = "";
+            resultElement.textContent = "";
+        });
+
+    </script>
+    
+<!-- <script>
+    const inputNumber = document.getElementById("userInput");
+    const checkButton = document.getElementById("btn1");
+    const clearButton = document.getElementById("btn2");
+    const resultElement = document.getElementById("result");
+  
+    checkButton.addEventListener("click", (event) => {
+      const number = parseInt(inputNumber.value);
+        event.preventDefault();
+  
+      if (isNaN(number)) {
+        resultElement.textContent = "Please enter a valid number.";
+      } else if (number % 2 === 0) {
+        resultElement.textContent = `${number} is an even number.`;
+      } else {
+        resultElement.textContent = `${number} is an odd number.`;
+      }
+    });
+  
+    clearButton.addEventListener("click", () => {
+      inputNumber.value = "";
+      resultElement.textContent = "";
+    });
+  </script> -->
+</body>
+
+</html>
